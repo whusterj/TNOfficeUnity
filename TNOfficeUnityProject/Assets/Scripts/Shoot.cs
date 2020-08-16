@@ -30,20 +30,17 @@ namespace TNOffice.Shooting
 
             // Fire on left mouse button click.
             if (!Input.GetMouseButtonDown(0)) { return; }
-            photonView.RPC("FireProjectile", RpcTarget.All);
+            FireProjectile();
         }
 
-        // As a PunRPC, this will run on each client, so the results will not
-        // necessarily be the same for everyone.
-        [PunRPC]
         private void FireProjectile()
         {
             Debug.Log("SHOOTING!");
 
             for (int i = 0; i < 20; i++)
             {
-                var projectileInstance = Instantiate(
-                    projectile,
+                var projectileInstance = PhotonNetwork.Instantiate(
+                    projectile.name,
                     spawnPoint.position,
                     spawnPoint.rotation
                 );

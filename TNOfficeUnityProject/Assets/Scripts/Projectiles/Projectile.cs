@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using Photon.Pun;
 
-public class Projectile : MonoBehaviour
+public class Projectile : MonoBehaviourPun
 {
     [SerializeField] private float elapsed = 0f;
     [SerializeField] private float lifetime = 10f;
@@ -9,7 +10,7 @@ public class Projectile : MonoBehaviour
     {
         // Expire projectiles at the end of lifetime
         elapsed += Time.deltaTime;
-        if (elapsed > lifetime)
+        if (elapsed > lifetime && photonView.IsMine)
         {
             Destroy(gameObject);
         }
