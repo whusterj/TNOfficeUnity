@@ -211,11 +211,11 @@ MonoBehaviour:
   droneAudioSource: {fileID: 8551642047306850174}
   droneAudioScale: 2
   droneAudioMinVolume: 0.1
-  droneAudioMaxVolume: 0.8
+  droneAudioMaxVolume: 0.3
   boostAudioSource: {fileID: 1320843304152125305}
   boostAmount: 2
   boostCooldown: 2
-  boostVolume: 1
+  boostVolume: 0.25
 --- !u!114 &2084793692535615907
 MonoBehaviour:
   m_ObjectHideFlags: 0

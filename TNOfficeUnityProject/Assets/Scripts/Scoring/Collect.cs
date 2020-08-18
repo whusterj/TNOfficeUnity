@@ -7,6 +7,8 @@ namespace TNOffice.Scoring
 {
     public class Collect : MonoBehaviourPun
     {
+        [SerializeField] private float collectSoundVolume = 1f;
+
         private Animator _animator = null;
 
         void Start()
@@ -44,7 +46,7 @@ namespace TNOffice.Scoring
         {
             // Increment this client's score
             ScoringSystem.theScore += 50;
-            AudioManager.instance.Play("CollectFood");
+            AudioManager.instance.Play("CollectFood", collectSoundVolume);
 
             // Call coroutine, which will trigger destruction of the collider,
             // once the exit animation has completed.
