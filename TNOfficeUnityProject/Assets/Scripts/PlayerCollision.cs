@@ -7,7 +7,7 @@ namespace TNOffice
     public class PlayerCollision : MonoBehaviourPun
     {
         [SerializeField] private float collisionFactor = 50f;
-        // [SerializeField] private GameObject damageParticlesPrefab = null;
+        [SerializeField] private GameObject damageParticlesPrefab = null;
 
         //
         private int frontHitFactor = 0;   // No damage when hit from front
@@ -68,18 +68,18 @@ namespace TNOffice
                     Mathf.Max(ScoringSystem.theScore - scoreAdjustment, 0)
                 );
 
-                // if (scoreAdjustment > 0)
-                // {
-                //     PhotonNetwork.Instantiate(
-                //         damageParticlesPrefab.name,
-                //         new Vector3(
-                //             gameObject.transform.position.x,
-                //             gameObject.transform.position.y,
-                //             gameObject.transform.position.z
-                //         ),
-                //         Quaternion.identity
-                //     );
-                // }
+                if (scoreAdjustment > 0)
+                {
+                    PhotonNetwork.Instantiate(
+                        damageParticlesPrefab.name,
+                        new Vector3(
+                            gameObject.transform.position.x,
+                            gameObject.transform.position.y,
+                            gameObject.transform.position.z
+                        ),
+                        Quaternion.identity
+                    );
+                }
             }
             else
             {
