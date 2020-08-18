@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviourPun
         elapsed += Time.deltaTime;
         if (elapsed > lifetime && photonView.IsMine)
         {
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 }

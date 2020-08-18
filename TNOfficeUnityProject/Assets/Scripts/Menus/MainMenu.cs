@@ -25,7 +25,7 @@ namespace TNOffice.Menus
             findOpponentPanel.SetActive(false);
             waitingStatusPanel.SetActive(true);
 
-            waitingStatusText.text = "Searching...";
+            waitingStatusText.text = "Connecting...";
 
             // Will join a game if you can
             if (PhotonNetwork.IsConnected)

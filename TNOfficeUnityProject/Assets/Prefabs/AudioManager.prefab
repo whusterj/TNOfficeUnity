@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4843596267844646098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4843596267844646096}
+  - component: {fileID: 4843596267844646099}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4843596267844646096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4843596267844646098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.147461, y: 18.899414, z: -19.196045}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4843596267844646099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4843596267844646098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec2c18f5b4cb01468b1d442e3cab4c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: CollectFood
+    clip: {fileID: 8300000, guid: 67a11d3757362d043b7b36d5ea5b6c0b, type: 3}
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0
+    playOnAwake: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Kindness
+    clip: {fileID: 8300000, guid: f7ad0471df219e84db1c353d9d8726e2, type: 3}
+    volume: 0.6
+    pitch: 1
+    spatialBlend: 0
+    playOnAwake: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Boost
+    clip: {fileID: 8300000, guid: 68037e1157b26a8459c255593f433f94, type: 3}
+    volume: 0.25
+    pitch: 1
+    spatialBlend: 0
+    playOnAwake: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: ChilledOutBackground
+    clip: {fileID: 8300000, guid: 53a832c2d3a898f4cbadde7fa99648c9, type: 3}
+    volume: 0.25
+    pitch: 1
+    spatialBlend: 0
+    playOnAwake: 1
+    loop: 1
+    source: {fileID: 0}

@@ -1,7 +1,7 @@
 ﻿using Cinemachine;
 using UnityEngine;
 using Photon.Pun;
-using TNOffice.Shooting;
+using TNOffice.Notifications;
 
 namespace TNOffice
 {
@@ -20,14 +20,11 @@ namespace TNOffice
                 Quaternion.identity
             );
 
-            // Change the scale of the player
-            // player.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-
             // Set the player camera to follow the player
             playerCamera.Follow = player.transform;
             playerCamera.LookAt = player.transform;
 
-            // Debug.Log("Shoot Script Enabled" + player.GetComponent<Shoot>().GetType());
+            // NotificationManager.instance.AddMessage("Press 'E' to boost.");
         }
     }
 

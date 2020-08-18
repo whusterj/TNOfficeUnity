@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Photon.Pun;
+using TNOffice.Scoring;
 
 namespace TNOffice.Shooting
 {
@@ -9,15 +10,29 @@ namespace TNOffice.Shooting
         [SerializeField] private GameObject projectile = null;
         [SerializeField] private Transform spawnPoint = null;
 
-        void Start()
-        {
-            // Debug.Log("Shoot.Start");
-        }
+        [SerializeField] private int unlockScore = 2000;
+
+        private bool _unlocked = false;
 
         // Update is called once per frame
         void Update()
         {
-            // Debug.Log("Shoot.Update");
+            // Users unlock the confetti shooter at 2000 points
+            if (!_unlocked && ScoringSystem.theScore >= unlockScore)
+            {
+                // Confetti Shooter unlocked!
+                _unlocked = true;
+
+                // TODO: Trigger event to let the user know
+            }
+
+            if (_unlocked && ScoringSystem.theScore < unlockScore)
+            {
+                _unlocked = false;
+
+                // TODO: Trigger event to let the user know
+            }
+
             if (photonView.IsMine)
             {
                 TakeInput();
@@ -26,11 +41,11 @@ namespace TNOffice.Shooting
 
         private void TakeInput()
         {
-            // Debug.Log("Taking player input...");
-
-            // Fire on left mouse button click.
-            if (!Input.GetMouseButtonDown(0)) { return; }
-            FireProjectile();
+            // Fire as long as left mouse is held down.
+            if (_unlocked && Input.GetMouseButton(0))
+            {
+                FireProjectile();
+            }
         }
 
         private void FireProjectile()
