@@ -11,24 +11,22 @@ namespace TNOffice.Notifications
         [SerializeField] private Animator animator = null;
 
         private bool _showingMessage = false;
-        private Queue<string> messages;
+        private Queue<string> messages = new Queue<string>();
 
         public static NotificationManager instance = null;
 
         void Awake()
         {
             if (instance == null)
+            {
                 instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
             else
             {
                 Destroy(gameObject);
                 return;
             }
-        }
-
-        void Start()
-        {
-            messages = new Queue<string>();
         }
 
         void Update()

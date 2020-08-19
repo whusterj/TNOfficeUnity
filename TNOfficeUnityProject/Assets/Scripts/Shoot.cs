@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Photon.Pun;
 using TNOffice.Scoring;
+using TNOffice.Notifications;
 
 namespace TNOffice.Shooting
 {
@@ -23,14 +24,18 @@ namespace TNOffice.Shooting
                 // Confetti Shooter unlocked!
                 _unlocked = true;
 
-                // TODO: Trigger event to let the user know
+                // Trigger event to let the user know
+                NotificationManager.instance.AddMessage((int)unlockScore + " points! You earned the confetti gun!");
+                NotificationManager.instance.AddMessage("Hold the Left Mouse Button to shoot confetti!");
             }
 
+            // User lost their confetti ability
             if (_unlocked && ScoringSystem.theScore < unlockScore)
             {
                 _unlocked = false;
 
-                // TODO: Trigger event to let the user know
+                // Trigger event to let the user know
+                NotificationManager.instance.AddMessage("Oh noes! You lost the confetti gun.");
             }
 
             if (photonView.IsMine)

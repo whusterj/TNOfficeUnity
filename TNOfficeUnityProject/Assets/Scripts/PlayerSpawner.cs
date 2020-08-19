@@ -1,6 +1,9 @@
-﻿using Cinemachine;
+﻿using System.Collections;
+using Cinemachine;
 using UnityEngine;
 using Photon.Pun;
+using System.Collections.Generic;
+using TMPro;
 using TNOffice.Notifications;
 
 namespace TNOffice
@@ -9,6 +12,7 @@ namespace TNOffice
     {
         [SerializeField] private GameObject playerPrefab = null;
         [SerializeField] private CinemachineFreeLook playerCamera = null;
+        [SerializeField] private TextMeshProUGUI notificationText = null;
 
         void Start()
         {
@@ -24,8 +28,8 @@ namespace TNOffice
             playerCamera.Follow = player.transform;
             playerCamera.LookAt = player.transform;
 
-            // NotificationManager.instance.AddMessage("Press 'E' to boost.");
+            NotificationManager.instance.AddMessage("Press 'E' to boost.");
+            // notificationText.text = "Press 'E' to boost.";
         }
     }
-
 }

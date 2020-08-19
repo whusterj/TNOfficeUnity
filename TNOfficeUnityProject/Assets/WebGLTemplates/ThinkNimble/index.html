@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta itemprop="name">
+    <meta property="og:title" content="ThinkNimble · Virtual Office">
+    <meta name="twitter:title" content="ThinkNimble · Virtual Office">
+    <meta name="description"
+        content="Step into our office! ThinkNimble is a product design and development agency based in Washington, DC.">
+    <meta itemprop="description"
+        content="Step into our office! ThinkNimble is a product design and development agency based in Washington, DC.">
+    <meta property="og:description"
+        content="Step into our office! ThinkNimble is a product design and development agency based in Washington, DC.">
+    <meta name="twitter:description"
+        content="Step into our office! ThinkNimble is a product design and development agency based in Washington, DC.">
+
+    <link rel="icon" href="favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ff6724">
+
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="%UNITY_WEBGL_LOADER_URL%"></script>
+    <script>
+        var unityInstance = UnityLoader.instantiate("unityContainer", "%UNITY_WEBGL_BUILD_URL%", { onProgress: UnityProgress });
+    </script>
+</head>
+
+<body>
+    <div class="webgl-content">
+        <div id="unityContainer" style="width: %UNITY_WIDTH%px; height: %UNITY_HEIGHT%px;"></div>
+        <div class="footer">
+            <!-- <div class="webgl-logo"></div> -->
+            <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+            <!-- <div class="title">TNOffice</div> -->
+        </div>
+    </div>
+</body>
+
+</html>

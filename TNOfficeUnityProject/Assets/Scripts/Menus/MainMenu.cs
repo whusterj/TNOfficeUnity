@@ -7,7 +7,7 @@ namespace TNOffice.Menus
     // Note that this subclasses Photon's Pun Callback
     public class MainMenu : MonoBehaviourPunCallbacks
     {
-        [SerializeField] private GameObject findOpponentPanel = null;
+        [SerializeField] private GameObject joinOfficePanel = null;
         [SerializeField] private GameObject waitingStatusPanel = null;
         [SerializeField] private TextMeshProUGUI waitingStatusText = null;
 
@@ -19,10 +19,10 @@ namespace TNOffice.Menus
 
         private void Awake() => PhotonNetwork.AutomaticallySyncScene = true;
 
-        public void FindOpponent()
+        public void JoinOffice()
         {
             isConnecting = true;
-            findOpponentPanel.SetActive(false);
+            joinOfficePanel.SetActive(false);
             waitingStatusPanel.SetActive(true);
 
             waitingStatusText.text = "Connecting...";
@@ -55,7 +55,7 @@ namespace TNOffice.Menus
         public override void OnDisconnected(Photon.Realtime.DisconnectCause cause)
         {
             waitingStatusPanel.SetActive(false);
-            findOpponentPanel.SetActive(true);
+            joinOfficePanel.SetActive(true);
 
             Debug.Log($"Disconnected due to: {cause}");
         }
